@@ -21,11 +21,15 @@ int main(void)
         case 1:
             printf("Ingrese el numero que registrara en la lista: ");
             scanf("%d", &element);
-            printf("%d", element);
             if (!insert(&list, element))
             {
                 printf("Ha ocurrido un error al ingresar:%d", element);
             }
+            else
+            {
+                printf("\nSe ha agregado correctamente el elemento:%d\n", element);
+            }
+
             break;
         case 2:
             printf("Ingrese el numero que se eliminara de la lista: ");
@@ -34,12 +38,18 @@ int main(void)
             {
                 printf("Ha ocurrido un error al eliminar:%d", element);
             }
+            else
+            {
+                printf("\nSe ha eleminado correctamente el elemento:%d\n", element);
+            }
+
             break;
         case 3:
             show(list);
             break;
         case 4:
             revert(&list);
+            show(list);
             break;
         default:
             break;

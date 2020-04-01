@@ -70,11 +70,12 @@ void show(struct List *list)
 {
     struct List *copyList = list;
 
+    printf("\nLista:\n");
     if (copyList == NULL)
     {
+        printf("Vacia\n");
         return;
     }
-    printf("\nLista:\n");
     while (copyList != NULL)
     {
         printf("%d\n", copyList->element);
