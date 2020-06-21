@@ -1,31 +1,64 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "functions.h"
+#include "vector.h"
 
 int main(void)
 {
-    int count = 1;
-    int i = 1;
-    struct Vector *vector = NULL;
+  int contador = 0;
+  int i = 0;
+  struct Vector *vector = NULL;
 
-    while (count != 0)
+  printf("Ingresa el numero de elementos: ");
+
+  scanf("%d", &contador);
+
+  for (i = 0; i <= contador; i++)
+  {
+    if (insertar(&vector, i) == 0)
     {
-        init(&vector);
+      printf("No ha sido posible insertar el elemento: %d\n", i);
 
-        printf("*Ingresa 0 para salir*\n");
-        printf("Ingresa el numero de elementos: ");
-
-        scanf("%d", &count);
-
-        for (i = 1; i <= count; i++)
-        {
-            if (!insert(&vector, i))
-            {
-                printf("No ha sido posible insertar el elemento:%d", i);
-                break;
-            }
-            show(&vector);
-        }
+      break;
     }
-    return 0;
+    mostrar(&vector);
+  }
+
+  if (buscar(&vector, 1) == 0)
+  {
+    printf("No se ha encontrado el elemento : %d\n", 1);
+  }
+  else
+  {
+    printf("Se ha encontrado el elemento : %d\n", 1);
+  }
+
+  if (buscar(&vector, 6) == 0)
+  {
+    printf("No se ha encontrado el elemento : %d\n", 6);
+  }
+  else
+  {
+    printf("Se ha encontrado el elemento : %d\n", 6);
+  }
+
+  if (eliminar(&vector, 1) == 0)
+  {
+    printf("No se ha eliminado el elemento : %d\n", 1);
+  }
+  else
+  {
+    printf("Se ha eliminado el elemento : %d\n", 1);
+  }
+
+  if (eliminar(&vector, 6) == 0)
+  {
+    printf("No se ha eliminado el elemento : %d\n", 6);
+  }
+  else
+  {
+    printf("Se ha eliminado el elemento : %d\n", 6);
+  }
+  mostrar(&vector);
+
+  return 0;
 }
