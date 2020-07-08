@@ -1,59 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "functions.h"
+#include "listaSimple.h"
 
 int main(void)
 {
-    int opt = 1;
-    int element = 1;
+    struct Lista *lista = NULL;
+    int elemento=0;
 
-    int i = 1;
-    struct List *list = NULL;
+    insertar(&lista, 1);
+    insertar(&lista, 3);
+    insertar(&lista, 5);
+    insertar(&lista, 7);
+    mostrar(lista);
+    eliminar(&lista, 3);
+    invertir(&lista);
+    mostrar(lista);
 
-    while (opt != 0)
+    elemento=5;
+
+    if(buscar(lista, elemento) == 1)
     {
-        printf("Menu\n1.- Agregar\n2.-Eliminar\n3.- Mostrar\n4.-Invertir\n0.-Salir\n");
-        printf("Selecciona la opción deseada: ");
-        scanf("%d", &opt);
-
-        switch (opt)
-        {
-        case 1:
-            printf("Ingrese el numero que registrara en la lista: ");
-            scanf("%d", &element);
-            if (!insert(&list, element))
-            {
-                printf("Ha ocurrido un error al ingresar:%d", element);
-            }
-            else
-            {
-                printf("\nSe ha agregado correctamente el elemento:%d\n", element);
-            }
-
-            break;
-        case 2:
-            printf("Ingrese el numero que se eliminara de la lista: ");
-            scanf("%d", &element);
-            if (!removeElement(&list, element))
-            {
-                printf("Ha ocurrido un error al eliminar:%d", element);
-            }
-            else
-            {
-                printf("\nSe ha eleminado correctamente el elemento:%d\n", element);
-            }
-
-            break;
-        case 3:
-            show(list);
-            break;
-        case 4:
-            revert(&list);
-            show(list);
-            break;
-        default:
-            break;
-        }
+        printf("Se ha encontrado el elemento: %d \n", elemento);
     }
+    else
+    {
+        printf("No se ha encontrado el elemento: %d \n", elemento);
+    }
+
+    elemento=9;
+
+    if(buscar(lista, elemento) == 1)
+    {
+        printf("Se ha encontrado el elemento: %d \n", elemento);
+    }
+    else
+    {
+        printf("No se ha encontrado el elemento: %d \n", elemento);
+    }
+
     return 0;
 }
