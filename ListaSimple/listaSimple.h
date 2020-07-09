@@ -7,8 +7,8 @@
 
 struct Lista
 {
-    int elemento;
-    struct Lista *siguiente;
+  int elemento;
+  struct Lista *siguiente;
 };
 
 int insertar(struct Lista **, int);

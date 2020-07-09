@@ -7,8 +7,8 @@
 
 struct List
 {
-    int element;
-    struct List *next;
+  int element;
+  struct List *next;
 };
 
 int insert(int);
