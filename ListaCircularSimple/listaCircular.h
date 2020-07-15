@@ -1,6 +1,6 @@
 
-#ifndef __FUNCTIONS_H__
-#define __FUNCTIONS_H__
+#ifndef __LISTA_DOBLE_H__
+#define __LISTA_DOBLE_H__
 
 #include <stdio.h>
 #include <stdlib.h>
