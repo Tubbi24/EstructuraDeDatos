@@ -7,7 +7,7 @@
 
 struct Cola
 {
-  int elementos[5];
+  int elementos[100];
   int inicio;
   int final;
 };

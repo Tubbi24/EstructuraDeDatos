@@ -1,6 +1,6 @@
 #include "cola.h"
 
-int total = 5;
+int total = 100;
 
 int insertar(struct Cola **cola, int elemento)
 {
