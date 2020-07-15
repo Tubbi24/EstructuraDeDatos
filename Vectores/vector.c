@@ -150,7 +150,7 @@ int buscar(struct Vector **vector, int elemento)
     return 0;
   }
 
-  for (int i = 0; i < (*vector)->total; i++)
+  for (i = 0; i < (*vector)->total; i++)
   {
     if (*((*vector)->elementos + i) == elemento)
     {
@@ -170,7 +170,7 @@ void mostrar(struct Vector **vector)
     return;
   }
 
-  for (int i = 0; i < (*vector)->total; i++)
+  for (i = 0; i < (*vector)->total; i++)
   {
     if (i == 0)
     {
